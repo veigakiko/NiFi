@@ -1,10 +1,10 @@
 FROM apache/nifi:latest
 
-# Expor as portas
+# Listar arquivos no diretório 'bin'
+RUN ls -l /opt/nifi/nifi-current/bin
+
+# Expor as portas do NiFi
 EXPOSE 8080 8443
 
-# Listar os arquivos para verificar a estrutura do diretório
-RUN ls -l bin
-
-# Comando para iniciar o NiFi
-CMD ["bin/nifi.sh", "run"]
+# Iniciar o NiFi
+CMD ["/opt/nifi/nifi-current/bin/nifi.sh", "run"]
