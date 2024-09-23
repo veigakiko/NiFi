@@ -1,0 +1,10 @@
+FROM apache/nifi:latest
+
+# Expose default NiFi port
+EXPOSE 8080
+
+# Optional: copy custom configurations
+# COPY nifi-custom-config /opt/nifi/nifi-current/conf/
+
+# Start NiFi when the container launches
+CMD ["nifi.sh", "run"]
