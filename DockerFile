@@ -1,10 +1,10 @@
 FROM apache/nifi:latest
 
-# Expor as portas do NiFi
+# Expor as portas
 EXPOSE 8080 8443
 
-# Definir as variáveis de ambiente (se necessário)
-ENV NIFI_WEB_HTTP_PORT=8080
+# Listar os arquivos para verificar a estrutura do diretório
+RUN ls -l bin
 
 # Comando para iniciar o NiFi
 CMD ["bin/nifi.sh", "run"]
